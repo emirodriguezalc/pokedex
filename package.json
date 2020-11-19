@@ -1,0 +1,24 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "This is a pokedex coded in my free time.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emirodriguezalc/pokedex.git"
+  },
+  "author": "Emilia Rodriguez Gimenez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emirodriguezalc/pokedex/issues"
+  },
+  "homepage": "https://github.com/emirodriguezalc/pokedex#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.6"
+  }
+}
