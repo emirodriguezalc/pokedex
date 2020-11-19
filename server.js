@@ -1,6 +1,5 @@
 const express = require('express');
-const fetch = require('node-fetch')
-
+const fetch = require('node-fetch');
 const app = express();
 
 app.get('/', (req, res) => {
@@ -26,8 +25,22 @@ app.get('/pokemon/:id/evolutions', (req, res) => {
 })
 
 app.get('/filters', (req, res) => {
- const type = req.query.type
- fetch(`https://pokeapi.co/api/v2/type/${type}`)
+ let filterName;
+ let filter;
+
+ const type = req.query.type || null;
+ const ability = req.query.ability || null;
+
+ if (type) {
+  filterName = 'type'
+  filter = type;
+ }
+ if (ability) {
+  filterName = 'ability'
+  filter = ability
+ }
+
+ fetch(`https://pokeapi.co/api/v2/${filterName}/${filter}`)
   .then(data => data.json())
   .then(json => res.send(json))
 })
