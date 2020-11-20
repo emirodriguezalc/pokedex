@@ -1,0 +1,18 @@
+.app-header {
+  width: 100%;
+  background-color: #dd0329;
+  padding: 20px;
+}
+
+.header-title {
+  margin: 0;
+  text-align: center;
+  color: #dfdfdf;
+}
+
+.app-filters {
+  display: flex;
+  width: 100%;
+  text-align-last: center;
+  margin: 15px 0;
+}
