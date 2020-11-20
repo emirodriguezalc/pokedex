@@ -12,7 +12,17 @@ app.get('/api/pokemon/:id', (req, res) => {
   const id = req.params.id
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then(data => data.json())
-    .then(json => res.send(json))
+    .then(json => {
+      res.send({
+        id: json.id,
+        name: json.name,
+        height: json.height,
+        weight: json.weight,
+        abilities: json.abilities,
+        front_default: json.sprites.front_default,
+        front_shiny: json.sprites.front_shiny,
+      })
+    })
 })
 
 app.get('/api/pokemon/:id/evolutions', (req, res) => {
