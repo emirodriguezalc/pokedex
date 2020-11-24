@@ -45,12 +45,12 @@ app.get('/api/filters', (req, res) => {
   }
   if (ability) {
     filterName = 'ability'
-    filter = ability
+    filter = ability.replace(/\s/g, '-');
   }
 
   fetch(`https://pokeapi.co/api/v2/${filterName}/${filter}`)
-    .then(data => JSON.parse(data))
-    .then(json => res.send(json))
+    .then(data => data.json())
+    .then(json => res.send(json.pokemon))
 })
 
 app.listen(8080, () => console.log('server up'));
