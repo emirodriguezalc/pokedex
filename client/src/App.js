@@ -1,11 +1,13 @@
 import './App.css';
 import Search from './components/search';
 import List from './components/pokemon-list';
+import Filters from './components/filters';
 import React, { useState } from 'react';
 
 function App() {
   const [searchResults, setSearchResults] = useState(null);
   const [filterResults, setFilterResults] = useState(null);
+
   return (
     <div className="App">
       <header className="app-header">
@@ -13,6 +15,7 @@ function App() {
       </header>
       <section className="app-filters">
         <Search setSearchResults={setSearchResults} />
+        <Filters setFilterResults={setFilterResults} />
         {filterResults && <List filterResults={filterResults} />}
       </section>
     </div>
