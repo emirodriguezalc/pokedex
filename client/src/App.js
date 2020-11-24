@@ -8,6 +8,7 @@ function App() {
   const [searchResults, setSearchResults] = useState(null);
   const [filterResults, setFilterResults] = useState(null);
 
+  console.log(filterResults, searchResults);
   return (
     <div className="App">
       <header className="app-header">

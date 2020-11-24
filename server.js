@@ -48,8 +48,6 @@ app.get('/api/filters', (req, res) => {
     filter = ability.replace(/\s/g, '-');
   }
 
-  console.log(filter);
-
   fetch(`https://pokeapi.co/api/v2/${filterName}/${filter}`)
     .then(data => data.json())
     .then(json => res.send(json.pokemon))
