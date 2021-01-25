@@ -3,6 +3,7 @@ import Search from './components/search';
 import List from './components/pokemon-list';
 import Filters from './components/filters';
 import React, { useState } from 'react';
+import Footer from './components/footer';
 
 function App() {
   const [searchResults, setSearchResults] = useState(null);
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      <section className="app-content">
       <header className="app-header">
         <h1 className="header-title">Gay Pokedex</h1>
       </header>
@@ -30,6 +32,12 @@ function App() {
       <section className="app-results">
         {(filterResults || searchResults) && <List filterResults={filterResults} searchResults={searchResults} updateSearchResults={updateSearchResults} />}
       </section>
+      </section>
+
+      <section className="app-footer">
+        <Footer />
+      </section>
+  
     </div>
   );
 }
