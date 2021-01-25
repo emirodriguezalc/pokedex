@@ -26,6 +26,8 @@ function App() {
       <section className="app-filters">
         <Search updateSearchResults={updateSearchResults} />
         <Filters updateFilterResults={updateFilterResults} />
+      </section>
+      <section className="app-results">
         {(filterResults || searchResults) && <List filterResults={filterResults} searchResults={searchResults} updateSearchResults={updateSearchResults} />}
       </section>
     </div>
