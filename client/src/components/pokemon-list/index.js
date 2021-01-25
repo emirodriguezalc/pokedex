@@ -13,7 +13,6 @@ const List = ({ filterResults, searchResults, updateSearchResults }) => {
       { filterResults && <ul className="pokemon-list-wrapper">
         {
           filterResults.map(pokemon => {
-            console.log(pokemon.pokemon, 'pokemon');
             return (
               <li className="pokemon-list-item">
                 {pokemon.pokemon.name}
