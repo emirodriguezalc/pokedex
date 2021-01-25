@@ -33,11 +33,9 @@ function App() {
         {(filterResults || searchResults) && <List filterResults={filterResults} searchResults={searchResults} updateSearchResults={updateSearchResults} />}
       </section>
       </section>
-
       <section className="app-footer">
         <Footer />
       </section>
-  
     </div>
   );
 }
