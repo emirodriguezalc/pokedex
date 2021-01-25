@@ -4,10 +4,13 @@ import List from './components/pokemon-list';
 import Filters from './components/filters';
 import React, { useState } from 'react';
 import Footer from './components/footer';
+import PokeSpinner from './components/pokespinner';
+import NoResults from './components/noResults'
 
 function App() {
   const [searchResults, setSearchResults] = useState(null);
   const [filterResults, setFilterResults] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const updateSearchResults = (data) => {
     setSearchResults(data);
@@ -26,11 +29,16 @@ function App() {
         <h1 className="header-title">Gay Pokedex</h1>
       </header>
       <section className="app-filters">
-        <Search updateSearchResults={updateSearchResults} />
-        <Filters updateFilterResults={updateFilterResults} />
+        <Search updateSearchResults={updateSearchResults} setLoading={setLoading} />
+        <Filters updateFilterResults={updateFilterResults} setLoading={setLoading} />
       </section>
       <section className="app-results">
-        {(filterResults || searchResults) && <List filterResults={filterResults} searchResults={searchResults} updateSearchResults={updateSearchResults} />}
+      {
+      loading &&
+      <PokeSpinner />
+      }
+      {(filterResults || searchResults) && <List filterResults={filterResults} searchResults={searchResults} updateSearchResults={updateSearchResults} />}
+     {(filterResults === undefined || searchResults === undefined) && <NoResults setLoading={setLoading} />}
       </section>
       </section>
       <section className="app-footer">

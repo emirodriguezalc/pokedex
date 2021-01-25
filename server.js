@@ -6,6 +6,9 @@ app.get('/api/', (req, res) => {
   fetch('https://pokeapi.co/api/v2/pokemon'/*?limit=0&offset=200*/)
     .then(data => data.json())
     .then(json => res.send(json))
+    .catch(function(error) {
+      res.send(error.message);
+  });
 })
 
 app.get('/api/pokemon/:id', (req, res) => {
@@ -23,6 +26,9 @@ app.get('/api/pokemon/:id', (req, res) => {
         front_shiny: json.sprites.front_shiny,
       })
     })
+    .catch(function(error) {
+      res.send(error.message);
+  });
 })
 
 app.get('/api/pokemon/:id/evolutions', (req, res) => {
@@ -51,6 +57,9 @@ app.get('/api/filters', (req, res) => {
   fetch(`https://pokeapi.co/api/v2/${filterName}/${filter}`)
     .then(data => data.json())
     .then(json => res.send(json.pokemon))
+    .catch(function(error) {
+      res.send(error.message);
+  });
 })
 
 app.listen(8080, () => console.log('server up'));

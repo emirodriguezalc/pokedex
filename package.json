@@ -18,6 +18,7 @@
   "homepage": "https://github.com/emirodriguezalc/pokedex#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "framer-motion": "^3.2.2-rc.1",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.6"
   }
