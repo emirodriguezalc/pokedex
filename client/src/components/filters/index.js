@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
-const Filters = ({ setFilterResults }) => {
+const Filters = ({ updateFilterResults }) => {
   const [input, setInput] = useState(null)
 
   const handleChange = (e) => {
@@ -14,7 +14,7 @@ const Filters = ({ setFilterResults }) => {
     e.preventDefault()
     fetch(`/api/filters?${filter}=${name}`)
       .then(res => res.json())
-      .then(json => setFilterResults(json));
+      .then(json => updateFilterResults(json));
   }
 
   return (

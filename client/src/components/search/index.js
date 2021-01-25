@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Search.css';
 
-const Search = ({ setSearchResults }) => {
+const Search = ({ updateSearchResults }) => {
   const [input, setInput] = useState(null)
 
   const handleChange = (e) => {
@@ -13,7 +13,7 @@ const Search = ({ setSearchResults }) => {
     const text = input.value;
     fetch(`api/pokemon/${text}`)
       .then(res => res.json())
-      .then(data => setSearchResults(data))
+      .then(data => updateSearchResults(data))
   }
   return (
     <form className="search-form" onSubmit={(e) => handleSubmit(e)}>

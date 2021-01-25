@@ -8,16 +8,25 @@ function App() {
   const [searchResults, setSearchResults] = useState(null);
   const [filterResults, setFilterResults] = useState(null);
 
-  console.log(filterResults, searchResults);
+  const updateSearchResults = (data) => {
+    setSearchResults(data);
+    setFilterResults(null);
+  };
+
+  const updateFilterResults = (data) => {
+    setSearchResults(null);
+    setFilterResults(data);
+  };
+
   return (
     <div className="App">
       <header className="app-header">
         <h1 className="header-title">Gay Pokedex</h1>
       </header>
       <section className="app-filters">
-        <Search setSearchResults={setSearchResults} />
-        <Filters setFilterResults={setFilterResults} />
-        {filterResults && <List filterResults={filterResults} />}
+        <Search updateSearchResults={updateSearchResults} />
+        <Filters updateFilterResults={updateFilterResults} />
+        {(filterResults || searchResults) && <List filterResults={filterResults} searchResults={searchResults} updateSearchResults={updateSearchResults} />}
       </section>
     </div>
   );
