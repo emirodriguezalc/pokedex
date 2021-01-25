@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
+import './Filters.css';
 
 const Filters = ({ updateFilterResults }) => {
   const [input, setInput] = useState(null)
@@ -19,12 +20,12 @@ const Filters = ({ updateFilterResults }) => {
 
   return (
     <section className="filters">
-      <DropdownButton id="dropdown-basic-button" title="Type">
-        {types.map(type => <Dropdown.Item onClick={(e) => handleSubmit(type.toLowerCase(), 'type', e)}>{type}</Dropdown.Item>)}
-      </DropdownButton>
       <form className="search-form" onSubmit={(e) => handleSubmit(input.value.toLowerCase(), 'ability', e)}>
         <input className="search-input" type="text" placeholder="Write an ability name" onChange={(e) => handleChange(e)}></input>
       </form>
+      <DropdownButton className="filters-dropdown" id="dropdown-basic-button" title="Pokemon type" variant="danger">
+        {types.map(type => <Dropdown.Item onClick={(e) => handleSubmit(type.toLowerCase(), 'type', e)}>{type}</Dropdown.Item>)}
+      </DropdownButton>
     </section>
   )
 }
