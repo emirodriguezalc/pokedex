@@ -5,6 +5,7 @@ import Filters from './components/filters';
 import React, { useState } from 'react';
 import Footer from './components/footer';
 import PokeSpinner from './components/pokespinner';
+import NoResults from './components/noResults'
 
 function App() {
   const [searchResults, setSearchResults] = useState(null);
@@ -37,6 +38,7 @@ function App() {
       <PokeSpinner />
       }
       {(filterResults || searchResults) && <List filterResults={filterResults} searchResults={searchResults} updateSearchResults={updateSearchResults} />}
+     {(filterResults === undefined || searchResults === undefined) && <NoResults setLoading={setLoading} />}
       </section>
       </section>
       <section className="app-footer">

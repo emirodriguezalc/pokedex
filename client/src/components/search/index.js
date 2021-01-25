@@ -16,7 +16,10 @@ const Search = ({ updateSearchResults, setLoading }) => {
     fetch(`api/pokemon/${text}`)
       .then(res => res.json())
       .then(data => updateSearchResults(data))
-      .then(() => setLoading(false));
+      .then(() => setLoading(false))
+      .catch(function() {
+        updateSearchResults(undefined)
+    });
   }
   return (
     <form className="search-form" onSubmit={(e) => handleSubmit(e)}>

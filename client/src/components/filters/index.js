@@ -18,7 +18,10 @@ const Filters = ({ updateFilterResults, setLoading }) => {
     fetch(`/api/filters?${filter}=${name}`)
       .then(res => res.json())
       .then(json => updateFilterResults(json))
-      .then(() => setLoading(false));
+      .then(() => setLoading(false))
+      .catch(function() {
+        updateFilterResults(undefined)
+    });
   }
 
   return (
