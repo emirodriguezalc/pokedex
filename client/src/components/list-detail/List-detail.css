@@ -1,0 +1,34 @@
+.pokemon-detail {
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 6px lightgrey;
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+} 
+
+.pokemon-detail-title {
+    text-transform: capitalize;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.pokemon-detail-info {
+    padding: 5px;
+}
+
+.pokemon-detail-list {
+    list-style: none;
+    padding: 0;
+
+}
+
+.pokemon-detail-list-item {
+    text-transform: capitalize;
+}
+
+.pokemon-detail-abilities {
+    background-color: lightgray;
+    border-bottom: 1px solid gray;
+    padding: 5px;
+}

@@ -17,3 +17,8 @@
   text-align-last: center;
   margin: 15px 0;
 }
+
+.app-results {
+  display: flex;
+  justify-content: center;
+}

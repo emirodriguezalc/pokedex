@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './List.css';
+import ListDetail from '../list-detail'
 
 const List = ({ filterResults, searchResults, updateSearchResults }) => {
   const handleClick = (e, name) => {
@@ -25,12 +25,7 @@ const List = ({ filterResults, searchResults, updateSearchResults }) => {
       </ul>
       }
       {
-        searchResults && <section className="pokemon-detail">
-          <h1>{searchResults.name}</h1>
-          <h2>{searchResults.height}</h2>
-          <h2>{searchResults.weight}</h2>
-          <img src={searchResults.front_default} alt={searchResults.name} />{searchResults.front_shiny && <img src={searchResults.front_shiny} alt={'shiny'} />}
-        </section>
+        searchResults && <ListDetail searchResults={searchResults}/>
       }
     </>
   )
