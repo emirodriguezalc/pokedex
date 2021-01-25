@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ListDetail from '../list-detail'
+import './List.css'
 
 const List = ({ filterResults, searchResults, updateSearchResults }) => {
   const handleClick = (e, name) => {
@@ -15,8 +16,8 @@ const List = ({ filterResults, searchResults, updateSearchResults }) => {
           filterResults.map(pokemon => {
             return (
               <li className="pokemon-list-item">
-                {pokemon.pokemon.name}
-                <button onClick={(e) => handleClick(e, pokemon.pokemon.name)}>See Details about {pokemon.pokemon.name}</button>
+                <h3 className="pokemon-list-item-name">{pokemon.pokemon.name}</h3> 
+                <button className="pokemon-list-item-button" onClick={(e) => handleClick(e, pokemon.pokemon.name)}>More about {pokemon.pokemon.name}</button>
               </li>
             )
 

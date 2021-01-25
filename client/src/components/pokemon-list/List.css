@@ -1,3 +1,32 @@
 .pokemon-list-wrapper {
   list-style: none;
+  padding: 0;
+  text-align: left;
+  width: 50%;
+  border: 1px solid gray;
+}
+
+.pokemon-list-item {
+  padding: 20px;
+  text-transform: capitalize;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.pokemon-list-item:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.pokemon-list-item-button {
+  text-transform: capitalize;
+  border-radius: 5px;
+  background-color: #dd0329;
+  color: white;
+  font-weight: 500;
+  border: none;
+}
+
+.pokemon-list-item-button:hover {
+  box-shadow: 0 0 8px 2px gray ;
 }

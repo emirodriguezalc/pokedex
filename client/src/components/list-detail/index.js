@@ -2,7 +2,6 @@ import React from 'react'
 import './List-detail.css';
 
 const ListDetail = ({ searchResults }) => {
-    console.log(searchResults);
     return (
         <section className="pokemon-detail">
             <h1 className="pokemon-detail-title">{searchResults.name} #{searchResults.id}</h1>
